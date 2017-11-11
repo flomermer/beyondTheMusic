@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tomer Flom - 303015671 - HW5 - Tables</title>
+	<meta charset="utf-8"></meta>
+	<style>
+		#myTable{
+			width:700px; height:600px; border:0px solid black; margin:0 auto; text-align:center;
+		}
+		#myTable td{border:1px solid black; border-collapse: collapse;
+					width:20%; height:25%;}
+		
+		img{width:50px;height:50px;}
+		
+		.td1{text-align:left; vertical-align:top;}
+		.td2{text-align:right; vertical-align:bottom;}
+		.td3{vertical-align:middle; text-align:center;}
+		.td4{background-color:yellow;}
+		.td5{background: url(IMAGES/BG1.jpg) fixed center;}
+		.tdHeb{text-align:right; direction:rtl;}
+		.tdEng{text-align:left;direction:ltr;}
+	</style>
+</head>
+<body>
+	<table id="myTable">
+		<TR>
+			<TD colspan="2" class="td5"></TD>
+			<TD></TD>
+			<TD></TD>
+			<TD class="td1"><img src="images/messiFace.png"></TD>
+		</TR>
+		<TR>
+			<TD class="td2"><img src="images/messiFace.png"></TD>
+			<TD></TD>
+			<TD></TD>
+			<TD></TD>
+			<TD class="td3"><img src="images/messiFace.png"></TD> <!--not 50%,50% cause picture itself has pixels also-->
+		</TR>
+		<TR>
+			<TD class="tdEng">english text</TD>
+			<TD></TD>
+			<TD></TD>
+			<TD></TD>
+			<TD rowspan="2" class="td4"></TD>
+		</TR>
+		<TR>
+			<TD class="tdHeb">טקסט בעברית</TD>
+			<TD></TD>
+			<TD></TD>
+			<TD></TD>
+		</TR>
+	</table>
+
+</body> 
+</html>
+

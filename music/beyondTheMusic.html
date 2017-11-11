@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+    <title>Feel The Music</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="tafrit.js"></script>
+    <script language="javascript">
+        $("document").ready(function(){
+            $("#clone_side_bar").html($("#side_menu").html());          
+        })
+    </script>
+</head>
+
+<body id="pageIndex">
+    <div class="tail-cont">
+        <div id="side_bar">            
+            <ul id="side_menu"></ul>
+        </div>
+        <div class="tail-top-left"></div>
+        <div class="tail-top">
+            <div class="container">
+                <!-- header -->
+                <div id="header">
+                    <div class="logo"><img src="images/logo.png" alt="" /></div>
+                    <script language="javascript">
+                        document.write(menu);
+                    </script>
+                </div>
+                <!-- content -->
+                <div id="content">
+                    <div class="indent">                        
+                            <h2>מאחורי הצלילים</h2>
+                            <p class="indent1">
+                                אז מהי בעצם "התיאוריה" שעומדת מאחורי המוסיקה?
+                                <br />
+                                 לאחר שתסיימו לקרוא דפים אלו, תוכלו לדעת את ההבדל בין תו, לאקורד לסולם.
+                                <br />
+                                תקבלו את הרקע הדרוש לתחילת דרככם כנגנים חובבים  וכל שיישאר לכם הוא לתרגל את הקוארדינציה והטכניקה עצמה על כל כלי נגינה בו תחפצו.
+                            </p>
+                        
+                            <h3>מקורות</h3>
+                            <p class="indent1">
+                                לפני שנצלול יחדיו אל עולם המוזיקה, חשוב לי לציין שרוב התכנים באתר זה נכתבו מהידע האישי שלי, אותו צברתי במהלך החיים. 
+                                <br />
+                                במהלך הכתיבה נעזרתי גם באתר 
+                                <a href="https://en.wikipedia.org">ויקפדיה</a>
+                                בעיקר במטרה לאשש את דברי.
+                                <br />
+                                בנוסף לכך, במידה ותחפשו את התכנים הנ"ל בויקפדיה ואינכם מתעסקים יותר מידי בתחום, סביר להניח שלא תבינו את רוב המושגים.
+                                לכן, בדף זה ניסיתי להעביר את הידע שלי אליכם ועל כן רשמתי אותו בשפה כזו שגם אדם שאינו מגיע מן התחום יוכל להבין ישירות.
+                            </p>    
+
+                            <h3>שנתחיל?</h3>                        
+                            <ul id="clone_side_bar" class="list1" style="margin-right:50px;">
+                                <!--will be inserted by jquery-->
+                            </ul>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- footer -->
+        <div id="footer">
+            © תומר פלום - 303015671
+        </div>
+    </div>
+</body>
+</html>

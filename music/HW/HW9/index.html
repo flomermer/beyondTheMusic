@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Tomer Flom - 303015671 - HW8 - Panorama</title>
+	<meta charset="utf-8" />
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/blitzer/jquery-ui.css">
+
+	
+	<style>
+        html, body{
+            height:95%; margin:0 auto;  
+            text-align:center; direction:rtl; 
+            font-family:Arial;
+            background:silver;            
+        }
+		
+        #divWebsite{
+            position:relative; 
+            width:80%; height:86%;            
+            margin:0 auto; 
+            margin-top:4%;            
+            border: 4px outset crimson;
+            overflow:hidden;
+            
+        }
+        
+       
+        #divContent{
+                    position: absolute;                    
+                    width:100%; height:92%;
+                    color:black;
+                    font-size:16pt;                    
+                    background:white;
+                    overflow:auto;
+                    border:1px solid black;
+        }
+       
+        /*menu style*/
+            .divMenu {
+                background-color: #333;           
+                overflow: hidden;  
+				height:8%;
+            }
+
+            .divMenu a {
+                float: right;
+                direction:rtl;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 10px 30px;                
+                text-decoration: none;
+                cursor:pointer;
+            }
+
+            .menuDrop {
+                float: right;
+                overflow: hidden;
+            }
+
+            .menuDrop .menuDropBtn {
+                font-size: 16px;    
+                border: none;
+                outline: none;
+                color: white;
+                padding:10px 30px;
+                background-color: inherit;                
+            }						
+
+            .menuDrop-content {
+                display: none;
+                position: absolute;
+                margin-top:-5px;
+                background-color: whitesmoke;
+                min-width: 160px;
+                box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                direction:rtl;
+            }
+
+            .menuDrop-content a {
+                display: block;
+                float: none;
+                padding: 12px 16px;
+                text-decoration: none;
+                text-align: center;
+                color: black;
+            }
+
+            .menuDrop-content a:hover {
+                background-color: #ddd;
+            }
+
+            .menuDrop:hover .menuDrop-content {
+                display: block;
+            }
+            
+            .menuActive{background-color:red;}
+			.divMenu .menuHref:not(.subMenu){cursor:pointer; color:gold;}
+	</style>
+	
+	<script language="javascript">
+        $("document").ready(function () {            
+            initializePage();
+
+            $(".menuHref").click(menuClick);                        
+			$(".menuNode").mouseover(menuMouseover);
+			$(".menuNode").mouseout(menuMouseout);
+		})
+	
+		function initializePage(){
+			$("#divContent").load($(".menuActive").attr("data-href"));
+			$(".menuActive").attr("data-isActive",1);
+		}
+
+        function menuClick() {
+            link = $(this).attr("data-href");			
+			
+            if (link == '#')
+                return false;
+				
+            $(".menuNode").removeClass("menuActive").attr("data-isActive",0);
+			if($(this).is(".menuNode")){
+				$(this).addClass("menuActive").attr("data-isActive",1);
+			}else if($(this).is(".menuDropBtn")){
+				$(this).parent().addClass("menuActive").attr("data-isActive",1);				
+			}else if($(this).is(".subMenu")){
+				$(this).parent().parent().addClass("menuActive").attr("data-isActive",1);				
+			}
+			
+
+            $("#divContent").load(link);            
+        }
+
+        function menuMouseover(){			
+            $(".menuNode").removeClass("menuActive");
+            $(this).addClass("menuActive");			
+        }
+		
+		function menuMouseout(){
+			$(".menuNode").removeClass("menuActive")
+			
+			$(".menuNode[data-isActive=1]").addClass("menuActive");
+		}
+	</script>
+	
+</head>
+<body>
+    <div id="divWebsite"> 
+  
+
+        <div class="divMenu">
+            <a class="menuNode menuHref menuActive" data-href="homepage.html">ראשי</a>
+            <a class="menuNode">תל אביב</a>
+            <div class="menuNode menuDrop">
+                <button class="menuDropBtn menuHref" data-href="cusco.html">קוסקו</button>
+                <div class="menuDrop-content">
+                    <a class="subMenu menuHref" data-href="cusco.html">הוסטל צ'קאנה</a>
+                    <a class="subMenu menuHref" data-href="cusco.html">שורה 2</a>
+                    <a class="subMenu menuHref" data-href="cusco.html">שורה 3</a>
+                </div>
+            </div>
+			<a class="menuNode">מדריד</a>
+			<a class="menuNode menuHref" data-href="form.html">טופס</a>
+			<a class="menuNode">ברלין</a>
+			<div class="menuNode menuDrop">
+                <button class="menuDropBtn menuHref" data-href="pai.html">פאי</button>
+                <div class="menuDrop-content">
+                    <a class="subMenu menuHref" data-href="pai.html">המעיינות הלבנים</a>
+                    <a class="subMenu menuHref" data-href="pai.html">שורה 2</a>
+                    <a class="subMenu menuHref" data-href="pai.html">שורה 3</a>
+					<a class="subMenu menuHref" data-href="pai.html">שורה 4</a>
+                </div>
+            </div>
+			           
+        </div>
+
+        <div id="divContent">
+           
+        </div>        
+    </div>
+	
+</body> 
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tomer Flom - 303015671 - HW5 - Tables</title>
+	<meta charset="utf-8"></meta>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<style>
+		
+		body{
+			font-family:arial;
+		}
+		
+		#divMenu{
+			display:flex; 
+			flex-direction:column;
+			align-items: center;
+			width:180px; height:250px;
+			border:3px solid black;
+			border-radius: 25px;
+			margin:0 auto; text-align:center; 
+			direction:rtl; 
+		}
+		
+		.flex-item{margin:10px;}
+			.flex-item img{width:140px; height:120px;}
+	
+		.flex-item-button{margin-top: auto; margin-bottom:10px;}
+			.flex-item-button button{width:80px; background-color:silver; font-weight:bold; border-radius:25px;}
+			.flex-item-button button:hover{cursor:pointer; border:2px gray outset;}
+			
+		.flex-order-success{margin:auto; font-weight:bold;}
+			
+	</style>
+	
+	<script language="javascript">
+		$("document").ready(function(){
+			$(".flex-item-button button").click(confirmOrder);
+		})
+		
+		function confirmOrder(){
+			var j = confirm("האם לבצע את ההזמנה?");
+			if(!j) return false;
+		
+			$("#divMenu").html("<div class='flex-order-success'>ההזמנה בוצעה בהצלחה. <BR> שליח יגיע בשעה הקרובה<BR><BR>בתיאבון!</div>");
+		}
+	</script>
+	
+</head>
+<body>
+	<div id="divMenu">
+		<div class="flex-item"><img src="images/steak.png" class="imgItem"></div>
+		<div class="flex-item itemDesc">סטייק אנטריקוט מובחר<BR>109 ש"ח</div>
+		
+		<div class="flex-item-button"><button>אישור</button></div>
+	</div>
+
+</body> 
+</html>
+

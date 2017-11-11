@@ -1,0 +1,100 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+    <title>Feel The Music</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="tafrit.js"></script>
+    <script language="javascript">
+        $("document").ready(function(){
+            $("#btnSubmit").click(function (e) { sendForm(e); })
+            $("#txtPhone").keypress(function(e){                
+                if (e.keyCode < 48 || e.keyCode > 57)  //allow only numeric input
+                    e.preventDefault();                
+            })
+        })
+
+        function sendForm(e) {            
+            e.preventDefault();
+            isLegal = 1;
+            $(".txtInput").each(function () {
+                if ($(this).val() == '') {
+                    inputLabel = $(this).parent().find("label").text().substring(0, $(this).parent().find("label").text().length-1); //cut the ':'  at the end
+                    alert("יש להזין " + inputLabel);
+                    isLegal = 0;
+                    return false;
+                }
+            })
+            if (isLegal == 0)
+                return false;
+                        
+            var j = confirm("האם לשלוח את הפנייה?");
+            if (j == false) return false;
+
+            $("#formContact").hide();
+            $("#formSent").fadeIn(500);
+        }
+    </script>
+</head>
+
+<body id="pageIndex">
+    <div class="tail-cont">
+        <div id="side_bar">
+            <ul id="side_menu"></ul>
+        </div>
+        <div class="tail-top-left"></div>
+        <div class="tail-top">
+            <div class="container">
+                <!-- header -->
+                <div id="header">
+                    <div class="logo"><img src="images/logo.png" alt="" /></div>
+                    <script language="javascript">
+                        document.write(menu);
+                    </script>
+                </div>
+                <!-- content -->
+                <div id="content">
+                    <div class="indent">
+                        <h2>צור קשר </h2>
+                        <form id="formContact" action="#" method="post">                            
+                            <fieldset>
+                                <div class="field">
+                                    <label>שם מלא:</label>
+                                    <input type="text" value="" name="txtName" id="txtName" class="txtInput" />
+                                </div>
+                                <div class="field">
+                                    <label>כתובת דוא"ל:</label>
+                                    <input type="text" value="" name="txtMail" id="txtMail" class="txtInput ltr" />
+                                </div>
+                                <div class="field">
+                                    <label>טלפון:</label>
+                                    <input type="text" value="" name="txtPhone" id="txtPhone" class="txtInput" maxlength="10"/>
+                                </div>
+                                <div class="field">
+                                    <label>תוכן ההודעה:</label>
+                                    <textarea cols="1" rows="1" class="txtInput"></textarea>
+                                </div>
+                                
+                                <div class="field" style="height:50px;">
+                                    <button class="btnSubmit" id="btnSubmit">צור קשר</button>
+                                </div>                            
+                            </fieldset>
+                        </form>
+
+                        <div class="indent1" id="formSent" style="display:none;">
+                            <br /><br />
+                            <h3>הטופס נשלח בהצלחה</h3>                            
+                            <h3>(לא באמת)</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- footer -->
+    <div id="footer">
+        © תומר פלום - 303015671
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+    <title>Feel The Music</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="css/myGallery.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    
+    <script src="tafrit.js"></script>
+   
+
+    <script language="javascript">
+        $("document").ready(function () {
+            initalizeGallery();
+            $(".imgArrow").click(gallerySwitchPics);
+        })
+
+        function initalizeGallery() {
+            currImg = $(".imgGallery[data-index=1]");
+            currImg.fadeIn(1000);
+            $(".imgArrow").fadeIn(1000);
+            $("#imgMemo").css("color", currImg.attr("data-color")).text(currImg.attr("data-memo"));
+            $("#imgRights").text("תמונה שייכת ל: " + currImg.attr("data-rights"));
+        }
+
+        function gallerySwitchPics() {
+            dir = $(this).attr("data-dir");
+            index = Number($("#myGallery").attr("data-currIndex"));
+            prevIndex = index;
+            
+            if (dir == "prev") 
+                index--;
+            else if (dir == "next")
+                index++;
+                
+            if (index < 1)
+                index = $("#myGallery").attr("data-maxIndex");
+            else if (index > $("#myGallery").attr("data-maxIndex"))
+                index = 1;
+
+            $("#myGallery").attr("data-currIndex", index);
+
+            currImg = $(".imgGallery[data-index=" + index + "]");
+            $(".imgGallery[data-index=" + prevIndex + "]").hide();
+            currImg.fadeIn(1000);
+            $("#imgMemo").css("color", currImg.attr("data-color")).text(currImg.attr("data-memo"));
+            $("#imgRights").text("תמונה שייכת ל: " + currImg.attr("data-rights"));
+        }
+    </script>
+</head>
+
+<body id="pageIndex">
+    <div class="tail-cont">
+        <div id="side_bar">
+            <ul id="side_menu"></ul>
+        </div>
+        <div class="tail-top-left"></div>
+        <div class="tail-top">
+            <div class="container">
+                <!-- header -->
+                <div id="header">
+                    <div class="logo"><img src="images/logo.png" alt="" /></div>
+                    <script language="javascript">
+                        document.write(menu);
+                    </script>
+                </div>
+                <!-- content -->
+                <div id="content">
+                    <div class="indent">
+                        <h2>גלריית תמונות</h2>
+                        <br /><br />
+                        <div id="myGallery" data-currIndex="1" data-maxIndex="3">
+                            <img id="imgArrowRight" class="imgArrow" src="images/rightArrow.png" data-dir="next" title="לתמונה הבאה"/>
+                            
+                            <span id="imgMemo"></span>
+
+                            <img src="images/gallery/percussion/drum.jpg" class="imgGallery" data-index="1" data-memo="תופים - Drum" data-color="white" data-rights="http://wallpapersafari.com" />
+                            <img src="images/gallery/percussion/cymbal.jpg" class="imgGallery" data-index="2" data-memo="מצילה - Cymbal" data-color="white" data-rights="https://cdn.shutterstock.com" />
+                            <img src="images/gallery/percussion/xylophon.jpg" class="imgGallery" data-index="3" data-memo="קסילופון - Xylophone" data-color="white" data-rights="https://www.vsl.co.at" />                            
+                            
+                            <img id="imgArrowLeft" class="imgArrow" src="images/leftArrow.png" data-dir="prev" title="לתמונה הקודמת"/>
+
+                            <br />
+                            <span id="imgRights"></span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- footer -->
+    <div id="footer">
+        © תומר פלום - 303015671
+    </div>
+</body>
+</html>

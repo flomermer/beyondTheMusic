@@ -1,0 +1,131 @@
+﻿
+<style>
+      #paiMenu{   
+        float:right;
+        list-style-type:circle;        
+        margin:0px; padding:0px;        
+        height:100%; width:13%;        
+        background-color: whitesmoke;       
+    }
+
+    #paiMenu li{
+        display: block;
+        color: #000;
+        padding: 20% 2.3%;
+        text-decoration: none;
+        color:black; text-decoration:none; font-size:13pt;
+    }
+
+    #paiMenu li:hover{background-color:silver; cursor:pointer;}
+
+    #paiMemo{
+        float:left;        
+        width:86%; height:100%;
+        text-align:center;
+        font-size:14pt; 
+        overflow-x: hidden;       
+    }
+
+    .spanImg{
+        color: blue;
+    }
+    .spanImg:hover{text-decoration:underline;cursor:pointer;}
+
+    #modalImg{                
+        display:none;
+        text-align:center;
+        margin: 0 auto;        
+    }
+</style>
+
+<script language="javascript">
+    $("document").ready(function () {
+        $("#modalImg").dialog().dialog("close"); //remove jquery ui dialog bug
+
+        $(".spanImg").click(spanImgClick);
+    })
+
+    function spanImgClick() {
+        src = $(this).attr("data-src");
+        caption = $(this).attr("data-caption");
+        $("#modalImg img").attr("src", src);
+
+        $("#modalImg").dialog({
+            modal: true,
+            resizable: false,
+            width: "auto",
+            height: "auto",            
+            title: caption
+        });
+    }
+</script>
+
+
+<div id="modalImg" style="display:none;">
+    <img src="images/pai/sylvana.jpg" />
+</div>
+
+
+<ul id="paiMenu">
+    <li>מעיינות חמים</li>
+    <li>המפל הלבן</li>
+    <li>השכרת אופנועים</li>
+    <li>מסאז'</li>    
+</ul>
+
+<div id="paiMemo">
+    <h2>פאי - <span style="color:green;">עולם שכולו ירוק</span> </h2>
+    <p>
+        אי שם בהרי הצפון של תאילנד - 
+        
+        שוכנת לה עיירה קסומה וירוקה העונה לשם פאי.
+        <br />
+        כידוע, אחד היעדים הנפוצים ביותר לטיול לחול עבור הישראלים הוא כמובן.. תאילנד!
+        <br />
+        אך על מקום קטן וקסום בשם פאי, לא כולם שמעו. וטוב שכך.
+        <br /><br>
+        לכן, אם אתם ישראלים שמחפשים לכם חופשה פסטורלית בתאילנד
+        <br />
+        ומעדיפים להתרחק מכל ההמולה הישראלית, מהאיים ומהמסיבות בסגנון החוף של מוש באילת
+        <br />
+        פאי הוא בדיוק המקום בשבילכם - עיירה שקטה בערים, מפותחת תיירותית אך עם זאת לא כל כך פופולרית.
+
+        <br /><br />                
+        תוכלו להגיע לשם באוטובוס ישיר מצ'אנג מאי.<br /> לסובלים מבחילות מבינכם, מומלץ לקחת כדור ולהשתדל לא לחשוב יותר מידי על הנסיעה האורכת שלוש שעות וחצי, <BR />
+        אי שם בדרכים לא סלולות ועקלקלקות בהרי הצפון של תאילנד.
+        <br /><br />
+        כשתגיעו לפאי, תחילה התארגנו לכם על מקום לישון מבין מגוון המלונות והבונגלוז שבעיירה.
+        <br />        
+        <i>המלצה אישית: <span class="spanImg" data-src="images/pai/sylvana.jpg" data-caption="מלון סילבנה - פאי">מלון סילבנה</span></i>
+        <br /><br />
+        
+        לאחר שהתמקמתם, מומלץ לצאת לרחוב הראשי ולהשכיר <span class="spanImg" data-src="images/pai/bike.jpg">קטנועים</span>.
+        <br />
+        * ניתן להשכיר קטנועים ללא רישיון.
+        <br />
+        * במידה ואתם אינכם מעוניינים בהשכרת קטנוע -> אין סיבה להגיע לפאי. לא ניתן להתנייד שם מבלי הקטנועים.
+        <br /><br /><br />
+        אלו היו 60 שניות על העיירה המופלאה העונה לשם פאי.
+		<BR><BR>
+        <br />
+		tomer flom
+		<BR><BR>
+        <br />
+		<BR><BR>
+        <br />
+		<BR><BR>
+        <br />
+		flomer
+		<br />
+		<BR><BR>
+        <br />
+		<BR><BR>
+        <br />
+		<br />
+		<BR><BR>
+        <br />
+		<BR><BR>
+        <br />
+    </p>
+</div>
+

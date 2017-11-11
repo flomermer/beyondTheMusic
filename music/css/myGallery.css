@@ -1,0 +1,7 @@
+#myGallery .imgGallery{border-radius:25px; box-shadow:black 5px 5px 10px 1px; display:none;}
+.imgArrow{width:50px; position:relative; top:145px; cursor:pointer;display:none;}
+    #imgArrowRight{float:right; margin-left:10px; }
+    #imgArrowLeft{float:left; margin-right:10px; }
+        
+#imgMemo{display:block; border:0px solid red; width:500px; position:relative; right:50px; top:20px; z-index:3; }
+#imgRights{position:relative; right:60px;}

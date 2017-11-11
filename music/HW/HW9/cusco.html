@@ -1,0 +1,113 @@
+﻿
+<style>
+    #cuscoMenu{   
+        float:right;
+        list-style-type:circle;        
+        margin:0px; padding:0px;        
+        height:100%; width:13%;        
+        background-color: whitesmoke;       
+    }
+
+    #cuscoMenu li{
+        display: block;
+        color: #000;
+        padding: 20% 2.3%;
+        text-decoration: none;
+        color:black; text-decoration:none; font-size:13pt;
+    }
+
+    #cuscoMenu li:hover{background-color:silver; cursor:pointer;}
+
+    #cuscuMemo{
+        float:left;        
+        width:87%; height:100%;
+        text-align:center;
+    }
+
+    #myGallery{        
+        display:block;
+        width:70%; height:50%;
+        text-align:center; margin:0 auto;               
+        position:relative;
+        border:0px solid black;
+    }
+
+
+    .imgGallery{width:80%; height:100%; display:none; border-radius:25px;}
+    .galleryArrow{position:absolute; width:50px; height:50px; top:40%; cursor:pointer;}
+        .arrowRight{right:0%;} 
+        .arrowLeft {left:0%; }
+
+</style>
+
+<script language="javascript">
+    $("document").ready(function () {
+        initalizeGallery();
+        $(".galleryArrow").click(gallerySwitchPics);
+    })
+
+    function initalizeGallery() {
+        $(".imgGallery[data-index=1]").fadeIn(1000);
+    }
+
+    function gallerySwitchPics() {
+        dir = $(this).attr("data-dir");
+        index = Number($("#myGallery").attr("data-currIndex"));
+        prevIndex = index;
+
+        if (dir == "prev") {
+            index--;
+            showDir = "right";
+            hideDir = "left";
+        } else if (dir == "next") {
+            index++;
+            showDir = "left";
+            hideDir = "right";
+        }
+        
+        
+        if (index < 1)
+            index = $("#myGallery").attr("data-maxIndex");
+        else if (index > $("#myGallery").attr("data-maxIndex"))
+            index = 1;
+        
+        $("#myGallery").attr("data-currIndex", index);
+
+        $(".imgGallery[data-index=" + prevIndex + "]").hide("slide", { direction: hideDir }, 1000);
+        setTimeout(function () {
+            $(".imgGallery[data-index=" + index + "]").show("slide", { direction: showDir }, 1000);
+        }, 1100);
+    }
+</script>
+<ul id="cuscoMenu">
+    <li>הוסטל צ'קאנה</li>
+    <li>האזנגטה</li>
+    <li>מועדון הטמפל</li>
+    <li>המאצ'ו פיצ'ו</li>
+    <li>מסעדות מומלצות</li>    
+</ul>
+
+<div id="cuscuMemo">
+    <h2>
+        אומרים שתמונה אחת שווה אלף מילים... 
+    </h2>
+    <div id="myGallery" data-maxIndex="10" data-currIndex="1">        
+        <img class="galleryArrow arrowRight" data-dir="next" src="images/misc/rightArrow.png" title="תמונה הבאה" />
+        
+        <img class="imgGallery" src="images/peru/1.jpg" data-index="1" />
+        <img class="imgGallery" src="images/peru/2.jpg" data-index="2" />
+        <img class="imgGallery" src="images/peru/3.jpg" data-index="3" />
+        <img class="imgGallery" src="images/peru/4.jpg" data-index="4" />
+        <img class="imgGallery" src="images/peru/5.jpg" data-index="5" />
+        <img class="imgGallery" src="images/peru/6.jpg" data-index="6" />
+        <img class="imgGallery" src="images/peru/7.jpg" data-index="7" />
+        <img class="imgGallery" src="images/peru/8.jpg" data-index="8" />
+        <img class="imgGallery" src="images/peru/9.jpg" data-index="9" />
+        <img class="imgGallery" src="images/peru/10.jpg" data-index="10" />
+        
+        <img class="galleryArrow arrowLeft" data-dir="prev" src="images/misc/leftArrow.png" title="תמונה קודמת" />
+    </div>
+    <h4>
+        אם כך, אז נסגור על... 10,000 מילים (:
+    </h4>
+</div>

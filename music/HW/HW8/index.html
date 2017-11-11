@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Tomer Flom - 303015671 - HW8 - Panorama</title>
+	<meta charset="utf-8"></meta>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<style>
+		
+		#divPanorama{
+			position: relative; margin:0 auto; text-align:center; 
+			width:900px; height:600px; 
+			border:1px solid black;
+			background-image: url(images/panorama2.jpg);						
+		}
+		
+		#divButtons{margin:0 auto; text-align:center;}
+		
+		#btnFly{width:150px; height:50px; border-radius:25px; font-weight: bold; font-size:18pt;}
+		#btnFly:hover{cursor:pointer; border:3px outset gray;}
+		
+		
+		#imgHawk{position:absolute; top:35%; right:40%;}
+		
+	</style>
+	
+	<script language="javascript">
+		$("document").ready(function(){
+			$("#btnFly").click(birdFly);
+		})
+		
+		
+		function birdFly(){		
+				if($(this).text()=="Fly"){
+					$(this).text("Stop")
+					$(this).attr("data-isFly",1);
+				}else {
+					$(this).text("Fly");
+					$(this).attr("data-isFly",0);
+				}
+											
+				var interval = setInterval(function(){					
+					counter = $("#btnFly").attr("data-counter");
+					counter = Number(counter) + Number(100);
+					$("#btnFly").attr("data-counter",counter);
+					$("#divPanorama").css("background-position",counter);				
+					if($("#btnFly").attr("data-isFly")==0){
+						clearInterval(interval);
+					}
+				},50);
+				
+				
+		}
+	</script>
+	
+</head>
+<body>
+
+	<div id="divPanorama">
+		<img id="imgHawk" src="images/hawk.png" />
+	</div>
+	<BR>
+	<div id="divButtons">
+		<button id="btnFly" data-counter="100" >Fly</button>	
+	</div>
+</body> 
+</html>
+

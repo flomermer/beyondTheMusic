@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tomer Flom - 303015671 - HW7 - javascript</title>
+	<meta charset="utf-8"></meta>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<style>
+		
+		body{
+			font-family:arial;
+			text-align:center;
+		}
+		#divGrass{
+			position: relative; width:500px; height:500px; margin:0 auto; text-align:center; 
+			background: url(images/grassBG.jpg);
+		}
+		
+		
+		
+		#imgBall{width:50px;height:50px;position:absolute;}
+			.top{top:0px;}
+			.bottom{bottom:0px;}
+			.left{left:0px;}
+			.right{right:0px;}
+		
+		
+		#divButtons{
+			width:600px;  text-align:center; margin:0 auto; margin-top:10px;
+		}
+		
+		.btnBall{margin-right:20px; margin-left:20px; width:90px;}
+			.btnBall:hover{cursor:pointer; border:2px outset gray;}
+		
+	</style>
+	
+	<script language="javascript">
+		$("document").ready(function(){
+			$(".btnBall").click(sortBall);
+		})
+		
+		function sortBall(){
+			whichClass = $(this).attr("data-class");
+			
+			$("#imgBall").removeClass("top bottom left right").addClass(whichClass); //add 2 classes to object out of 4 optional(top,bottom,left,right)
+		}
+	</script>
+	
+</head>
+<body>
+	<div id="divGrass">
+		<img src="images/ball.png" id="imgBall" />
+	</div>
+	<div id="divButtons">
+		<button class="btnBall" data-class="top left">topLeft</button>
+		<button class="btnBall" data-class="top right">topRight</button>
+		<button class="btnBall" data-class="bottom left">bottomLeft</button>
+		<button class="btnBall" data-class="bottom right">bottomRight</button>
+	</div>
+</body> 
+</html>
+

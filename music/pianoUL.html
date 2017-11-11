@@ -1,0 +1,69 @@
+﻿<link type="text/css" rel="stylesheet" href="css/piano/style.css" />
+<script language="javascript">
+    $("document").ready(function(){
+        displayKeyNotes();
+    })
+
+    function displayKeyNotes() {
+        $(".key span").each(function (i, obj) {
+            if ($(this).attr("class") == "white-key") {
+                $(this).html("<span class='whiteKeyName'>" + $(this).attr("data-note") + "</span>");
+            } else {
+                $(this).html("<span class='blackKeyName'>" + $(this).attr("data-note") + "</span>");
+            }
+        })
+    }    
+</script>
+
+    <li class="key">
+        <span class="white-key" data-note="C"></span>
+        <span class="black-key" data-note="C#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="D"></span>
+        <span class="black-key" data-note="D#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="E"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="F"></span>
+        <span class="black-key" data-note="F#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="G"></span>
+        <span class="black-key" data-note="G#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="A"></span>
+        <span class="black-key" data-note="A#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="B"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="C"></span>
+        <span class="black-key" data-note="C#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="D"></span>
+        <span class="black-key" data-note="D#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="E"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="F"></span>
+        <span class="black-key" data-note="F#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="G"></span>
+        <span class="black-key" data-note="G#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="A"></span>
+        <span class="black-key" data-note="A#"></span>
+    </li>
+    <li class="key">
+        <span class="white-key" data-note="B"></span>
+    </li>

@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css?family=Assistant:400,700&subset=hebrew');
+
+* {margin:0;padding:0}
+html {min-width:1000px; direction:rtl;min-height:100%;position:relative;}
+body {background:url(images/tail-cont.gif) repeat center top #f2c142; font-family: 'Assistant', 'Arial', sans-serif;
+      font-size:100%;line-height:16px;color:#000;min-width:1000px;margin:0 0 70px;} /*70 px bottom padding for the footer*/ 
+
+/* global */
+#header, #content, #footer {font-size:12px}
+.wrapper {width:100%;overflow:hidden}
+.container {width:1000px;margin:0 auto;position:relative}
+.fleft {float:left}
+.fright {float:right}
+p {margin:0;padding:0;font-size:16px; line-height:130%;}
+
+
+.tail-top {background:url(images/tail-top.gif) center top repeat-x;}
+.tail-top-left {height:161px;position:absolute;left:0;top:0;width:50%;background:url(images/tail-top-left.gif) repeat-x left top;}
+.tail-bottom {background:url(images/tail-bottom.png) left bottom repeat-x; border:1px solid green;}
+
+/*footer*/
+  #footer {background:url(images/bottom-bg.jpg) repeat-x; width: 100%; position: absolute; bottom: 0px; border:0px solid black; height:70px;
+           text-align:center; margin:0 auto; line-height:70px; font-size:22px;
+  }
+
+
+/* list */
+
+ul {list-style:none}
+.nav-bar {position:absolute;left:0;top:128px;z-index:2}
+.nav-bar li {float:right;text-transform:uppercase;font-size:18px;background:url(images/divider1.gif) repeat-y right top;line-height:17px; position:relative;}
+.nav-bar li a {color:#515151;text-decoration:none;display:block;width:163px;padding:4px 0 3px 0;text-align:center}
+.nav-bar li a:hover,
+.nav-bar li a:hover {color:#a24f00}
+
+.nav-bar li:hover .sub_menu {display: block; }
+
+.sub_menu{display: none; position:absolute; top:21px; text-align:center; margin:0 auto; list-style-type: none; background:#eadec3;}
+.sub_menu li:first-child{margin-top:12px}
+.sub_menu li a{width:163px; padding-top:12px; padding-bottom:12px; font-size:14px;}
+.sub_menu li:hover a:hover{background-color: #cccccc;}
+
+#side_bar{width:180px; min-height:561px;height:auto!important;height:561px; 
+          border:0px solid black; position:absolute; right:5px; top:161px;
+          text-align:center;border-left:0px dashed black; display:none; }           
+
+#side_menu {display: inline-block; vertical-align: top;}
+#side_menu li:first-child{margin-top:50px;}
+#side_menu li {list-style-image:url(images/icon4.gif); margin-bottom:30px;}
+#side_menu li a {display: block; direction: rtl; text-decoration: none; color: black; font-size:20px;}
+#side_menu li a:hover {text-decoration:underline;}
+
+
+/* txt, links, lines, titles */
+a {color:#c9710c;outline:none; text-decoration:none;}
+a:hover{text-decoration:underline}
+a.nextPage{font-size:20px; font-weight:bold; }
+h2, h3 {color:#c9710c;line-height:19px;margin-bottom:20px}
+h2 {font-size:36px}
+h3 {font-size:25px}
+.link {text-align:right;font-weight:bold}
+img.imgP{border-radius:25px; box-shadow:black 5px 5px 10px 1px;}
+img.center{display:block; margin:0 auto;}
+img.imgBeyondSax{position:absolute;left:5px;top:200px;z-index:3;}
+.slctbox{width:auto; padding:5px; border-radius:25px; cursor:pointer; box-shadow:black 5px 5px 10px 1px; text-align:center; margin-left:30px;}
+
+.tableNotes {width: 500px; border-collapse: collapse;}
+.tableNotes td, .tableNotes th {text-align: center; border: 1px solid black;}
+
+/*header*/
+#header {background:url(images/header-bg.jpg) no-repeat left top;height:161px;}
+#header .logo {position:absolute;right:0px;top:0px}
+
+/*content*/
+#content {background:url(images/cont-bg.jpg) no-repeat left top;min-height:561px;height:auto!important;height:561px}
+#content .indent {padding:50px 50px 50px 329px}
+#content .indent1 {padding-bottom:30px;}
+
+    /*lists*/
+    .list1{
+        list-style-image:url(images/icon4.gif); list-style-position:inside;
+    }
+    .list1 li{font-size:16px; margin-top:3px; margin-bottom:10px;}    
+    .list1 li a{font-size:20px; text-decoration:none; color:black;}
+    .list1 li a:hover{text-decoration:underline;}
+    
+
+/* forms */
+    #formContact {clear:right;width:100%;overflow:hidden;padding:15px 0 0 0; }
+    #formContact fieldset {border:none;float:right;}
+    #formContact .field {clear:both;}
+    #formContact label {float:right;width:97px;line-height:20px;padding-bottom:15px;font-weight:bold;color:#9f5827; font-size:14px;}
+    #formContact input {border-radius:20px; box-shadow:black 5px 5px 10px 1px; width:227px;padding:1px 5px 1px 3px; line-height:20px; background:#fff;border-right:1px solid #db5100;border-bottom:1px solid #db5100;color:#70635b;float:right}
+    #formContact textarea {border-radius:20px; box-shadow:black 5px 5px 10px 1px;width:450px;height:150px;padding:1px 10px 1px 3px;background:#fff;border-right:1px solid #db5100;border-bottom:1px solid #db5100;color:#70635b;margin-bottom:15px;overflow:auto;float:right}
+    
+    input, textarea, select {font-family:Tahoma, Arial, helvetica, sans-serif;font-size:1em}
+    input, select {vertical-align:middle;font-weight:normal}
+    .ltr {text-align:left; direction:ltr;}
+    .btnSubmit{display:block; text-align:center;margin:0 auto; width:80px; height:30px; border-radius:25px; box-shadow:black 5px 5px 10px 1px; cursor:pointer; border:1px outset #db5100;}
+    .btnSubmit:hover{font-weight:bold;}

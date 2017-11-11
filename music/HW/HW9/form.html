@@ -1,0 +1,71 @@
+﻿
+<h3>טופס לדוגמא - חיפוש דירה</h3>
+<style>
+    #tableForm{
+        margin:0 auto;        
+        width:40%;        
+    }
+    #tableForm td{
+        padding:10px;
+    }
+
+    .formSlct{
+        width:250px; height:30px; border:1px solid deepskyblue; border-radius:25px; background-color:transparent;
+    }
+
+    .formTxt{
+          width:250px; height:20px; border:1px solid deepskyblue;
+          text-align:center; direction:rtl;
+    }
+
+    .engInp{
+        direction:ltr; text-align:left;
+    }
+
+    #btnSubmit{
+        background : #37B700 ; width : 200px ; height : 40px ; border-radius :20px ; color : white ; border : none ; font-family : arial; font-size : 80%;
+    }
+    #btnSubmit:hover{border:3px outset green;cursor:pointer;}
+</style>
+<form id="formExample" name="formExample" action="formAction.php" method="post">
+    <table id="tableForm">
+        <tr>
+            <td>שם מלא</td>
+            <td><input type="text" class="formTxt" id="txtName" name="txtName" /></td>
+        </tr>
+        <tr>
+            <td>מייל</td>
+            <td><input type="text" class="formTxt engInp" id="txtMail" name="txtMail"/></td>
+        </tr>
+        <tr>
+            <td>מחוז:</td>
+            <td>
+                <select name="slctDistrict" id="slctDistrict" class="formSlct">
+                    <option value="0">יש לבחור מחוז</option>
+                    <option value="north">צפון</option>
+                    <option value="center">דרום</option>
+                    <option value="south">מרכז</option>                
+                </select>
+            </td>        
+        </tr>
+        <tr>
+            <td>עיר:</td>
+            <td><input type="text" class="formTxt" id="txtCity" name="txtCity"/></td>
+        </tr>
+        <tr>
+            <td>מצב משפחתי:</td>
+            <td>
+                <input type="radio" name="radStatus" class="formRad" value="single" checked />רווק
+                &nbsp;
+                <input type="radio" name="radStatus" class="formRad" value="marriage"/>נשוי
+                &nbsp;
+                <input type="radio" name="radStatus" class="formRad" value="devorced"/>גרוש
+            </td>
+        </tr>  
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <button id="btnSubmit">שליחת טופס</button>
+            </td>
+        </tr>  
+    </table>
+</form>
